@@ -1,0 +1,235 @@
+@charset 'utf-8';
+
+// If you want to override some bootstrap variables, you have to change values here.
+// The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+$icon-font-path: '../../bower_components/bootstrap-sass/assets/fonts/bootstrap/';
+
+// Do not remove the comments below. It's the markers used by wiredep to inject
+// sass dependencies when defined in the bower.json of your dependencies
+// bower:scss
+// endbower
+
+@import 'src/assets/sass/all';
+
+
+*{
+    font-family: 'work_sanslight' !important;
+ }
+
+body {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  color: $color-baltic-sea;
+  background: $color-white;
+}
+
+h3 {
+  font-family: 'work_sanslight';
+  font-weight: normal;
+  font-style: normal;
+  color: inherit;
+  text-rendering: optimizeLegibility;
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+.main {
+  width: 100%;
+
+  &__footer {
+    background: $color-christine;
+  }
+}
+
+
+.sticky-navbar {
+  width: 100vw;
+  overflow-x: visible;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 102;
+  transition: all .3s linear;
+  border-bottom: 1px solid rgba($color-white, .16);
+
+
+  &__logo {
+    height: 106px;
+
+    @media screen and (max-width: $break-small) {
+      width: 100vw;
+     height: 86px;
+    }
+
+    transition: all .3s linear;
+    float: left;
+    .menuIcon {
+      display: none;
+      @media screen and (max-width: $break-small) {
+        display: block;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 24px;
+        max-width: 40px;
+        width: 12%;
+      }
+    }
+    img {
+      margin-top: 25px;
+      margin-left: 50px;
+      margin-right: 50px;
+      transition: all .3s linear;
+      height: 70px;
+      @media screen and (max-width: $break-small) {
+        max-height: 50px;
+        max-width: 227px;
+        width: 50%;
+        height: auto;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__main-navigation {
+    height: 106px;
+    float: left;
+    transition: all .3s linear;
+    padding-top: 35px;
+
+    @media screen and (max-width: $break-small) {
+      display: none;
+    }
+
+    ul {
+      height: 52px;
+
+      li {
+        display: inline-block;
+
+        a {
+          transition: all .3s linear;
+          padding: 10px 14px;
+          border: 1px solid transparent;
+          background: transparent;
+          border-radius: 2px;
+
+          &:hover,
+          &:active {
+            background: transparent;
+            color: $color-jaffa;
+            border: 1px solid $color-jaffa;
+          }
+        }
+
+        &.active a {
+          background: $color-jaffa;
+          color: $color-white;
+        }
+
+        &:last-child {
+          a {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &--small {
+    background-color: rgba(87, 93, 93, .72);
+      
+     @media screen and (min-width: $break-small) {  
+
+      .sticky-navbar__logo {
+       height: 76px;
+       margin-top: 0px;
+        img {
+          height: 55px;
+          margin-top: 18px;
+        }
+      }
+
+      .sticky-navbar__main-navigation {
+        height: 76px;
+        padding-top: 22px;
+      }
+    }
+  }
+}
+
+.mobileMenu {
+  background-color: rgba(87, 93, 93, 0.98);
+  position: fixed;
+  top: 0px;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  padding-top: 120px;
+  display: none;
+  transition: all .3s linear;
+  color: #dadada;
+  padding-left: 30px;
+  overflow: scroll;
+  ul {
+    list-style-type: none;
+    li {
+      font-size: 20px;
+      font-weight: 800;
+      padding-bottom: 10px !important;
+    }
+  }
+
+ .inner {
+    padding-left: 25px;
+    font-size: 16px;
+  }
+
+  .last {
+    padding-bottom: 25px !important;
+  }
+}
+
+.mobileMenuShow {
+  display: block;
+}
+
+
+.header {
+ @media screen and (max-width: $break-small) {
+    min-height: 300px !important;
+    padding-top: 30px !important;
+    width: 100vw !important;
+  }
+  .title {
+    @media screen and (max-width: $break-small) {
+      margin-top: 105px !important;
+  }
+  }
+}
+
+
+
+.leftMenu {
+ @media screen and (max-width: $break-small) {
+    display: none !important;
+  }
+}
+
+.content {
+ @media screen and (max-width: $break-small) {
+     width: 85vw !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 0px !important;
+  }
+}
+
+// Do not remove the comments below. It's the markers used by gulp-inject to inject
+// all your sass files automatically
+// injector
+// endinjector
+
+

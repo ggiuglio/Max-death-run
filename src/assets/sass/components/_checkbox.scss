@@ -1,0 +1,83 @@
+@mixin checkbox-hover-styles {
+  color: $color-jaffa;
+
+  a {
+    color: $color-jaffa;
+  }
+
+  .tick {
+    border-color: $color-jaffa;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  .tick::before {
+    opacity: 1;
+  }
+}
+
+.checkbox {
+  user-select: none;
+
+  input[type=checkbox] {
+    display: none;
+
+    +label {
+      display: inline-block;
+      float: none;
+      width: auto;
+      margin: 0;
+      font-size: 14px;
+      line-height: 22px;
+      color: $color-white;
+      cursor: pointer;
+
+      &:hover {
+        @include checkbox-hover-styles;
+
+        .tick::before {
+          opacity: .3;
+        }
+      }
+
+      .tick::before {
+        opacity: 0;
+      }
+
+      a {
+        color: $color-white;
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .tick {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    font-size: 12px;
+    border: 1px solid $color-silver;
+    border-radius: 3px;
+
+    &::before {
+      position: absolute;
+      left: 4px;
+      top: 4px;
+    }
+  }
+
+  .name {
+    margin-left: 30px;
+  }
+}
+
+.selected .checkbox input[type=checkbox] + label,
+.checkbox input[type=checkbox] + label.selected {
+  @include checkbox-hover-styles;
+}
