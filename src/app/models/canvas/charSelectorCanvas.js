@@ -1,6 +1,6 @@
  "use strict";
   angular.module('mdr')
-  .directive('charSelectorCanvas', [ 'loaderService', function (loaderSvc) {
+  .directive('charSelectorCanvas', [ 'selectorLoaderService', function (loaderSvc) {
 
        return {
            restrict : 'EAC',
@@ -28,18 +28,7 @@
 
                }
                function handleComplete() {
-                  //  sky = new Sky({width:w, height:h});
-                  //  sky.addToStage(scope.stage);
-                  //  ground = new Ground({width:w, height:h});
-                  //  hill = new Hill({width:w, height:h, scaleFactor: 4, assetName: 'hill', groundHeight: ground.getHeight()});
-                  //  hill.setAlpha(0.5);
-                  //  hill.addToStage(scope.stage);
-                  //  hill2 = new Hill({width:w, height:h, scaleFactor: 3, assetName: 'hill2', groundHeight: ground.getHeight()});
-                  //  hill2.addToStage(scope.stage);
-                  //  ground.addToStage(scope.stage);
-                  //  grant = new Character({characterAssetName: 'grant', y: 34})
-                  //  grant.addToStage(scope.stage);
-                   //scope.stage.addEventListener("stagemousedown", handleJumpStart);
+
                    spriteSheet = new createjs.SpriteSheet({
                       framerate: 10,
                       "images": [loaderSvc.getResult("max")],
@@ -58,23 +47,13 @@
                }
 
                function handleJumpStart() {
-                  //  grant.playAnimation("jump");
+
                }
 
                function tick(event) {
-                    var deltaS = event.delta / 1000;
-                  //  var position = grant.getX() + 150 * deltaS;
-                  //  grant.setX((position >= w + grant.getWidth()) ? -grant.getWidth() : position);
-                  //  ground.setX((ground.getX() - deltaS * 150) % ground.getTileWidth());
-                  //  hill.move(deltaS * -30, 0);
-                  //  if (hill.getX() + hill.getImageWidth() * hill.getScaleX() <= 0) {
-                  //      hill.setX(w);
-                  //  }
-                  //  hill2.move(deltaS * -45, 0);
-                  //  if (hill2.getX() + hill2.getImageWidth() * hill2.getScaleX() <= 0) {
-                  //      hill2.setX(w);
-                  //  }
-                   scope.stage.update(event);
+                  var deltaS = event.delta / 1000;
+
+                  scope.stage.update(event);
                }
            }
        }

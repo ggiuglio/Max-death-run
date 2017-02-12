@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('mdr')
-  .service('loaderService', loaderService)
+  .service('selectorLoaderService', selectorLoaderService)
 
-  function loaderService () {
+  function selectorLoaderService () {
    var manifest = [
        {src: "max_hello.png", id: "max"}
       //  {src: "sky.png", id: "sky"},
